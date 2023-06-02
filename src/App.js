@@ -13,6 +13,7 @@ import {
 import Login from "./components/Login"
 import FriendList from './components/Friendlist';
 import AddFriends from './components/AddFriend';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         .catch( err => console.error(err))
     
     }
+
   return (
     
   <div className="App">
@@ -47,8 +49,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Login/>}/>
-        <Route path="/friendList" element={<FriendList/>}/>
-        <Route path="/addFriend" element={<AddFriends/>}/>
+        <PrivateRoute path="/friendList" component={<FriendList/>}/>
+        <PrivateRoute path="/addFriend" component={<AddFriends/>}/>
       </Routes>
   </div> 
 
