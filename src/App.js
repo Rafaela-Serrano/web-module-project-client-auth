@@ -48,9 +48,18 @@ function App() {
       <Link onClick={logout}>LOGOUT</Link>
       
       <Routes>
+        
         <Route path="/" element={<Login/>}/>
-        <PrivateRoute path="/friendList" component={<FriendList/>}/>
-        <PrivateRoute path="/addFriend" component={<AddFriends/>}/>
+  
+        <Route path='/' element={<PrivateRoute/>}> 
+        <Route path="/friendList" element={<FriendList/>}></Route>
+        </Route>
+
+        <Route path='/' element={<PrivateRoute/>}> 
+        <Route path="/addFriend" element={<AddFriends/>}></Route>
+        </Route>
+
+      
       </Routes>
   </div> 
 
